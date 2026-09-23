@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import ruangProduksiImg from '../assets/images/ruang-produksi.jpg';
 import ruangPodcastImg from '../assets/images/ruang-podcast.jpg';
+import ruangPraktikImg from '../assets/images/foto-ruang-praktik.jpeg';
 
 // Equipment authentic photos from assets
 import foto3dPrinter from '../assets/images/equipment/foto-3d-printer.jpeg';
@@ -193,15 +195,16 @@ export default function PusatKeunggulan() {
         </div>
 
         {/* Room 3: Ruang Praktik */}
-        <div className="rounded-2xl border border-soft-blue overflow-hidden bg-page-canvas flex flex-col">
-          <div className="h-44 relative overflow-hidden bg-gradient-to-br from-soft-blue/50 via-page-canvas to-soft-blue/30 flex items-center justify-center p-6 text-center border-b border-soft-blue/60">
-            <div className="space-y-1.5">
-              <div className="w-12 h-12 mx-auto rounded-2xl bg-white shadow-xs border border-soft-blue flex items-center justify-center text-deep-blue">
-                <span className="material-symbols-outlined text-2xl text-deep-blue">devices_fold</span>
-              </div>
-              <h4 className="text-sm font-bold text-dark-text mt-1">Ruang Praktik</h4>
-              <p className="text-[11px] font-semibold text-tech-blue">Riset Hardware & Robotik</p>
-            </div>
+        <div className="rounded-2xl border border-soft-blue overflow-hidden bg-page-canvas flex flex-col group">
+          <div className="h-44 relative overflow-hidden">
+            <img 
+              alt="Ruang Praktik RPL" 
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" 
+              src={ruangPraktikImg} 
+            />
+            <span className="absolute bottom-2 left-2 bg-dark-text/80 backdrop-blur-xs text-white px-2.5 py-0.5 rounded-lg text-[11px] font-bold">
+              Ruang Praktik
+            </span>
           </div>
           <div className="p-4 flex-1 flex flex-col justify-between">
             <p className="text-xs text-muted-text leading-relaxed">
@@ -259,22 +262,22 @@ export default function PusatKeunggulan() {
         </div>
       </div>
 
-      {/* Modal Lightbox Popup for Equipment Documentation */}
-      {selectedEquipment && (
+      {/* Modal Lightbox Popup for Equipment Documentation (Portal to document.body) */}
+      {selectedEquipment && typeof document !== 'undefined' && createPortal(
         <div 
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-dark-text/75 backdrop-blur-sm animate-fade-in"
+          className="fixed inset-0 z-[9999] flex items-center justify-center p-3 sm:p-5 bg-dark-text/80 backdrop-blur-md animate-fade-in"
           onClick={() => setSelectedEquipment(null)}
           role="dialog"
           aria-modal="true"
         >
           <div 
-            className="bg-white rounded-3xl border border-soft-blue shadow-2xl overflow-hidden max-w-2xl w-full flex flex-col max-h-[90vh] animate-scale-up"
+            className="bg-white rounded-3xl border border-soft-blue shadow-2xl overflow-hidden max-w-2xl w-full flex flex-col max-h-[88vh] my-auto animate-scale-up"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
-            <div className="p-4 sm:p-5 border-b border-soft-blue/60 flex items-center justify-between bg-page-canvas">
+            <div className="shrink-0 p-4 sm:p-5 border-b border-soft-blue/60 flex items-center justify-between bg-page-canvas">
               <div className="flex items-center gap-2.5">
-                <div className="w-10 h-10 rounded-xl bg-soft-blue/50 flex items-center justify-center text-tech-blue">
+                <div className="w-10 h-10 rounded-xl bg-soft-blue/50 flex items-center justify-center text-tech-blue shrink-0">
                   <span className="material-symbols-outlined text-xl">{selectedEquipment.icon}</span>
                 </div>
                 <div>
@@ -289,7 +292,7 @@ export default function PusatKeunggulan() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 shrink-0">
                 <span className="hidden sm:inline-block px-2.5 py-1 rounded-full bg-soft-blue/50 text-deep-blue text-[11px] font-bold">
                   {currentIndex + 1} / {equipments.length}
                 </span>
@@ -305,18 +308,18 @@ export default function PusatKeunggulan() {
             </div>
 
             {/* Modal Image Display */}
-            <div className="relative bg-slate-950 flex items-center justify-center overflow-hidden min-h-[260px] max-h-[420px]">
+            <div className="relative bg-slate-950 flex items-center justify-center overflow-hidden flex-1 min-h-[200px] max-h-[50vh]">
               <img 
                 src={selectedEquipment.image} 
                 alt={`Foto dokumentasi ${selectedEquipment.title}`}
-                className="w-full h-full max-h-[420px] object-contain transition-opacity duration-300"
+                className="w-full h-full max-h-[50vh] object-contain transition-opacity duration-300"
               />
 
               {/* Prev & Next Floating Buttons */}
               <button
                 type="button"
                 onClick={handlePrev}
-                className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-dark-text/60 hover:bg-dark-text text-white backdrop-blur-xs flex items-center justify-center border border-white/20 transition-all cursor-pointer shadow-lg hover:scale-105 active:scale-95"
+                className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-dark-text/60 hover:bg-dark-text text-white backdrop-blur-xs flex items-center justify-center border border-white/20 transition-all cursor-pointer shadow-lg hover:scale-105 active:scale-95 z-10"
                 title="Peralatan Sebelumnya (Panah Kiri)"
               >
                 <span className="material-symbols-outlined text-xl">chevron_left</span>
@@ -324,21 +327,21 @@ export default function PusatKeunggulan() {
               <button
                 type="button"
                 onClick={handleNext}
-                className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-dark-text/60 hover:bg-dark-text text-white backdrop-blur-xs flex items-center justify-center border border-white/20 transition-all cursor-pointer shadow-lg hover:scale-105 active:scale-95"
+                className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-dark-text/60 hover:bg-dark-text text-white backdrop-blur-xs flex items-center justify-center border border-white/20 transition-all cursor-pointer shadow-lg hover:scale-105 active:scale-95 z-10"
                 title="Peralatan Selanjutnya (Panah Kanan)"
               >
                 <span className="material-symbols-outlined text-xl">chevron_right</span>
               </button>
 
               {/* Badge Overlay */}
-              <div className="absolute bottom-3 left-3 bg-dark-text/80 backdrop-blur-xs text-white px-3 py-1 rounded-lg text-xs font-semibold flex items-center gap-1.5 border border-white/10">
+              <div className="absolute bottom-3 left-3 bg-dark-text/80 backdrop-blur-xs text-white px-3 py-1 rounded-lg text-xs font-semibold flex items-center gap-1.5 border border-white/10 z-10">
                 <span className="material-symbols-outlined text-sm text-cyan-300">verified</span>
                 Dokumentasi Otentik Lab PK RPL SMKN 12
               </div>
             </div>
 
             {/* Modal Description & Controls */}
-            <div className="p-4 sm:p-5 bg-white flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div className="shrink-0 p-4 sm:p-5 bg-white flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-t border-soft-blue/40">
               <div className="flex-1 pr-2">
                 <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
                   {selectedEquipment.description}
@@ -372,7 +375,8 @@ export default function PusatKeunggulan() {
               </div>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   );

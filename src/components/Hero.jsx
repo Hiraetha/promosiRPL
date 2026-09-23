@@ -149,12 +149,7 @@ export default function Hero() {
           </div>
 
           {/* 3 Metric Cards */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-2">
-            <div className="bg-white rounded-2xl p-3.5 border border-soft-blue shadow-xs">
-              <p className="text-[11px] uppercase tracking-wider text-muted-text font-semibold">Kemitraan DUDI</p>
-              <p className="text-xl font-bold text-deep-blue mt-0.5">94.8% Lulusan</p>
-            </div>
-            
+          <div className="grid grid-cols-2 sm:grid-cols-2 gap-4 pt-2">
             <div className="bg-white rounded-2xl p-3.5 border border-soft-blue shadow-xs">
               <p className="text-[11px] uppercase tracking-wider text-muted-text font-semibold">Kurikulum</p>
               <p className="text-xl font-bold text-deep-blue mt-0.5">Standar Industri</p>

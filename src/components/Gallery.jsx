@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { X, ZoomIn } from 'lucide-react';
 import labImg from '../assets/images/lab-komputer.jpg';
 import podcastImg from '../assets/images/ruang-podcast.jpg';
@@ -142,14 +143,14 @@ export default function Gallery() {
         </div>
       )}
 
-      {/* Lightbox Modal */}
-      {activeModal && (
+      {/* Lightbox Modal (Portal to document.body) */}
+      {activeModal && typeof document !== 'undefined' && createPortal(
         <div 
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-dark-text/70 backdrop-blur-xs"
+          className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-dark-text/80 backdrop-blur-md animate-fade-in"
           onClick={() => setActiveModal(null)}
         >
           <div 
-            className="bg-white rounded-[28px] max-w-2xl w-full overflow-hidden shadow-2xl border border-soft-blue relative"
+            className="bg-white rounded-[28px] max-w-2xl w-full overflow-hidden shadow-2xl border border-soft-blue relative my-auto animate-scale-up"
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -173,7 +174,8 @@ export default function Gallery() {
               </p>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </section>
   );
