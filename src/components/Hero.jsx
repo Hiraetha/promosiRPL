@@ -148,16 +148,26 @@ export default function Hero() {
             </a>
           </div>
 
-          {/* 3 Metric Cards */}
-          <div className="grid grid-cols-2 sm:grid-cols-2 gap-4 pt-2">
-            <div className="bg-white rounded-2xl p-3.5 border border-soft-blue shadow-xs">
-              <p className="text-[11px] uppercase tracking-wider text-muted-text font-semibold">Kurikulum</p>
-              <p className="text-xl font-bold text-deep-blue mt-0.5">Standar Industri</p>
+          {/* Metric Cards - Optimized for Mobile & Desktop */}
+          <div className="grid grid-cols-2 gap-2.5 sm:gap-4 pt-2">
+            <div className="bg-white rounded-xl sm:rounded-2xl p-3 sm:p-3.5 border border-soft-blue shadow-xs flex flex-col justify-center">
+              <p className="text-[10px] sm:text-[11px] uppercase tracking-wider text-muted-text font-semibold flex items-center gap-1">
+                <span className="material-symbols-outlined text-xs sm:text-sm text-tech-blue">verified</span>
+                Kurikulum
+              </p>
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-deep-blue mt-0.5 leading-snug">
+                Standar Industri
+              </p>
             </div>
             
-            <div className="bg-white rounded-2xl p-3.5 border border-soft-blue shadow-xs col-span-2 sm:col-span-1">
-              <p className="text-[11px] uppercase tracking-wider text-muted-text font-semibold">Status Kampus</p>
-              <p className="text-xl font-bold text-deep-blue mt-0.5">SMK PK Unggulan</p>
+            <div className="bg-white rounded-xl sm:rounded-2xl p-3 sm:p-3.5 border border-soft-blue shadow-xs flex flex-col justify-center">
+              <p className="text-[10px] sm:text-[11px] uppercase tracking-wider text-muted-text font-semibold flex items-center gap-1">
+                <span className="material-symbols-outlined text-xs sm:text-sm text-tech-blue">workspace_premium</span>
+                Status Kampus
+              </p>
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-deep-blue mt-0.5 leading-snug">
+                SMK PK Unggulan
+              </p>
             </div>
           </div>
         </div>
