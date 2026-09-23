@@ -11,6 +11,7 @@ import Gallery from './components/Gallery';
 import Careers from './components/Careers';
 import Achievements from './components/Achievements';
 import Footer from './components/Footer';
+import BackToTop from './components/BackToTop';
 
 export default function App() {
   return (
@@ -57,6 +58,9 @@ export default function App() {
         {/* 13. Minimalist Clean Footer */}
         <Footer />
       </div>
+
+      {/* Floating Animated Back-To-Top Button */}
+      <BackToTop />
     </div>
   );
 }
