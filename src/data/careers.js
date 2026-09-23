@@ -1,0 +1,58 @@
+export const careers = [
+  {
+    title: "Software Developer",
+    role: "Pengembang Perangkat Lunak",
+    description: "Merancang, membangun, dan memelihara program aplikasi serta sistem logika perangkat lunak dengan berbagai bahasa pemrograman modern.",
+    skills: ["Algoritma", "Clean Code", "OOP & System Design", "Git Version Control"],
+    icon: "Code2",
+  },
+  {
+    title: "Web Developer",
+    role: "Frontend & Backend Engineer",
+    description: "Menciptakan website responsif, aplikasi web berbasis cloud, serta arsitektur server dan antarmuka pengguna yang cepat dan interaktif.",
+    skills: ["HTML/CSS/JS", "React & Modern Framework", "REST API", "Responsive Web"],
+    icon: "Globe",
+  },
+  {
+    title: "Mobile Developer",
+    role: "Aplikasi Android & iOS",
+    description: "Mengembangkan aplikasi mobile yang berkinerja tinggi, ramah pengguna, dan mampu berintegrasi dengan layanan sensor perangkat gawai.",
+    skills: ["Mobile UI Logic", "State Architecture", "API Integration", "Mobile Optimization"],
+    icon: "Smartphone",
+  },
+  {
+    title: "UI/UX Designer",
+    role: "Desainer Produk Digital",
+    description: "Meriset kebutuhan pengguna, menyusun alur interaksi digital, serta mendesain antarmuka visual aplikasi yang estetis, modern, dan fungsional.",
+    skills: ["Figma Mastery", "Design System", "Wireframing", "User Experience Flow"],
+    icon: "Palette",
+  },
+  {
+    title: "Database Developer",
+    role: "Arsitek & Administrator Data",
+    description: "Mengelola struktur penyimpanan data skala besar, memastikan keamanan basis data, serta mengoptimalkan kueri informasi agar efisien.",
+    skills: ["SQL & Relational DB", "Data Normalization", "Query Optimization", "Data Integrity"],
+    icon: "Database",
+  },
+  {
+    title: "IT Support & Specialist",
+    role: "Spesialis Dukungan Teknologi",
+    description: "Menangani instalasi, konfigurasi jaringan, pemeliharaan sistem komputerisasi, serta troubleshooting kendala teknis perangkat kerja.",
+    skills: ["Hardware & OS", "Network Setup", "Troubleshooting", "System Maintenance"],
+    icon: "Wrench",
+  },
+  {
+    title: "Game Developer",
+    role: "Pembuat Game Interaktif",
+    description: "Menggabungkan logika pemrograman, fisika gerak, storyline, dan aset visual audio untuk menciptakan pengalaman gim digital yang adiktif dan seru.",
+    skills: ["Game Logic Mechanics", "Game Engine", "Asset Integration", "Math & Physics Logic"],
+    icon: "Gamepad2",
+  },
+  {
+    title: "Wirausaha Teknologi (Technopreneur)",
+    role: "Pendiri Startup Digital",
+    description: "Memanfaatkan keahlian rekayasa software untuk membangun solusi produk digital mandiri, jasa agensi pengembangan web, atau studio teknologi rintisan.",
+    skills: ["Product Management", "Digital Marketing", "Client Solution", "Innovative Thinking"],
+    icon: "TrendingUp",
+  },
+];

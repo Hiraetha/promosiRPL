@@ -1,0 +1,147 @@
+export const studentActivities = [
+  {
+    title: "Praktik Pemrograman Terarah",
+    category: "Coding & Logic",
+    description: "Siswa mendalami sintaks, algoritma, serta penyelesaian masalah logika melalui penulisan kode nyata setiap minggu.",
+  },
+  {
+    title: "Pengembangan Website Interaktif",
+    category: "Web Engineering",
+    description: "Membangun antarmuka landing page, dashboard aplikasi web, dan integrasi API dengan standar industri.",
+  },
+  {
+    title: "Pembuatan Project Aplikasi",
+    category: "Product Development",
+    description: "Bekerja dalam tim layaknya software house untuk merancang solusi digital yang menjawab permasalahan nyata.",
+  },
+  {
+    title: "Praktik Database & Sistem Informasi",
+    category: "Data Engineering",
+    description: "Merancang skema database relasional yang rapi, query teroptimasi, dan menjamin integritas data aplikasi.",
+  },
+  {
+    title: "Pembuatan Prototipe Game",
+    category: "Game Design",
+    description: "Menggabungkan seni grafis, mekanik logika, fisika 2D/3D, dan sound design dalam proyek gim edukatif.",
+  },
+  {
+    title: "Presentasi & Demo Day Project",
+    category: "Soft Skill & Showcase",
+    description: "Melatih kepercayaan diri siswa dalam mempresentasikan arsitektur software dan mendemokan karya di depan audiens.",
+  },
+  {
+    title: "Workshop & Kuliah Tamu Teknologi",
+    category: "Industry Insights",
+    description: "Sesi berbagi wawasan langsung bersama praktisi industri teknologi mengenai tren karir dan standar kerja developer.",
+  },
+  {
+    title: "Pembelajaran di Laboratorium PK",
+    category: "Hands-on Experience",
+    description: "Eksplorasi perangkat modern seperti 3D printer, VR headset, studio podcast, dan robotika Lean Bot.",
+  },
+  {
+    title: "Persiapan Lomba & Kompetisi IT",
+    category: "Achievement Mentoring",
+    description: "Bimbingan intensif dan simulasi kompetisi bagi siswa berpotensi untuk berlaga di ajang LKS dan kompetisi bergengsi.",
+  },
+];
+
+export const extracurriculars = [
+  { name: "Programming Club", tag: "Code Mastery", desc: "Komunitas eksplorasi bahasa pemrograman, problem solving, dan competitive programming." },
+  { name: "Web Development", tag: "Frontend & Backend", desc: "Mendalami framework modern, cloud hosting, dan pembuatan website profesional." },
+  { name: "UI/UX & Desain Grafis", tag: "Product Design", desc: "Mengasah kepekaan visual, pembuatan design system, dan prototipe aplikasi di Figma." },
+  { name: "Komunitas IT & Open Source", tag: "Collaboration", desc: "Berkolaborasi dalam proyek open-source dan saling berbagi repositori kode." },
+  { name: "Pengembangan Project Inovatif", tag: "Incubation", desc: "Inkubator karya siswa untuk melahirkan produk digital rintisan yang bermanfaat." },
+];
+
+export const galleryCategories = [
+  "Semua",
+  "Laboratorium",
+  "Pembelajaran",
+  "Project",
+  "Workshop",
+  "Lomba",
+];
+
+export const galleryItems = [
+  {
+    id: 1,
+    title: "Suasana Praktik Laboratorium Komputer",
+    category: "Laboratorium",
+    badge: "Lab Komputer",
+    date: "Tahun Ajaran Aktif",
+    description: "Siswa RPL SMKN 12 fokus mengeksplorasi kode pemrograman dan arsitektur aplikasi pada workstation berkecepatan tinggi.",
+    theme: "blue",
+    featured: true,
+  },
+  {
+    id: 2,
+    title: "Ruang Produksi Lab Pusat Keunggulan",
+    category: "Laboratorium",
+    badge: "Lab PK",
+    date: "Fasilitas Modern",
+    description: "Eksplorasi pencetakan 3D prototype dan merchandise kreatif dengan perlengkapan produksi digital terkini.",
+    theme: "indigo",
+    featured: false,
+  },
+  {
+    id: 3,
+    title: "Sesi Perekaman Audio-Visual Ruang Podcast",
+    category: "Laboratorium",
+    badge: "Lab PK",
+    date: "Studio Podcast",
+    description: "Aktivitas siswa mendokumentasikan wawasan teknologi dan wawancara inspiratif di ruang podcast berkedap suara.",
+    theme: "cyan",
+    featured: false,
+  },
+  {
+    id: 4,
+    title: "Kolaborasi Pemrograman Web & UI/UX",
+    category: "Pembelajaran",
+    badge: "Praktik Kelas",
+    date: "Project Siswa",
+    description: "Siswa saling mereview antarmuka pengguna dan kode responsif untuk memastikan standar desain modern tercapai.",
+    theme: "blue",
+    featured: false,
+  },
+  {
+    id: 5,
+    title: "Pameran & Showcase Karya Siswa RPL",
+    category: "Project",
+    badge: "Demo Day",
+    date: "Tahunan",
+    description: "Demonstrasi prototipe web application dan mobile app hasil inovasi siswa di hadapan guru dan pengunjung.",
+    theme: "emerald",
+    featured: true,
+  },
+  {
+    id: 6,
+    title: "Workshop Teknologi Bersama Praktisi Industri",
+    category: "Workshop",
+    badge: "Transfer Knowledge",
+    date: "Agenda Rutin",
+    description: "Pemaparan tren cloud computing dan software engineering modern langsung dari profesional industri IT.",
+    theme: "violet",
+    featured: false,
+  },
+  {
+    id: 7,
+    title: "Bimbingan Simulasi Kompetisi & Lomba IT",
+    category: "Lomba",
+    badge: "Mentoring",
+    date: "Pusat Pelatihan",
+    description: "Latihan intensif memecahkan algoritma kompleks dan simulasi pembuatan modul sistem secara cepat.",
+    theme: "amber",
+    featured: false,
+  },
+  {
+    id: 8,
+    title: "Layanan Transaksi Digital Ruangan SEMUDAH",
+    category: "Laboratorium",
+    badge: "Ruangan SEMUDAH",
+    date: "Layanan Siswa",
+    description: "Pusat transaksi fotokopi, percetakan, dan top-up digital yang dikelola untuk menunjang kebutuhan aktivitas warga sekolah.",
+    theme: "blue",
+    featured: false,
+  },
+];
