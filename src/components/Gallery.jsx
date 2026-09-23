@@ -1,14 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { X, ZoomIn } from 'lucide-react';
 import labImg from '../assets/images/lab-komputer.jpg';
 import podcastImg from '../assets/images/ruang-podcast.jpg';
 import produksiImg from '../assets/images/ruang-produksi.jpg';
 import semudahImg from '../assets/images/ruangan-semudah.jpg';
+import lksSoftwareImg from '../assets/images/lks-it-software-solution.jpg';
+import lksWebImg from '../assets/images/lks-web-technology.jpg';
+import lksSuasanaImg from '../assets/images/lks-pelaksanaan-kompetisi.jpg';
 
 export default function Gallery() {
   const [activeFilter, setActiveFilter] = useState('Semua');
   const [activeModal, setActiveModal] = useState(null);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') setActiveModal(null);
+    };
+
+    if (activeModal) {
+      document.body.style.overflow = 'hidden';
+      window.addEventListener('keydown', handleKeyDown);
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset';
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [activeModal]);
 
   const filterChips = [
     'Semua',
@@ -63,6 +84,39 @@ export default function Gallery() {
       colSpan: 'md:col-span-7',
       height: 'h-72',
       category: ['Workshop', 'Pembelajaran'],
+    },
+    {
+      id: 5,
+      image: lksWebImg,
+      tag: 'LKS Web Technology',
+      tagBg: 'bg-emerald-600 text-white',
+      title: 'Kontingen LKS SMK Bidang Web Technology',
+      desc: 'Siswa dan guru pembimbing RPL SMKN 12 Jakarta pada ajang LKS Jakarta Utara.',
+      colSpan: 'md:col-span-6',
+      height: 'h-80',
+      category: ['Lomba', 'Pembelajaran'],
+    },
+    {
+      id: 6,
+      image: lksSoftwareImg,
+      tag: 'LKS IT Software Solution',
+      tagBg: 'bg-deep-blue text-white',
+      title: 'Kontingen LKS IT Software Solution for Business',
+      desc: 'Kompetisi perancangan software enterprise tingkat wilayah Jakarta Utara.',
+      colSpan: 'md:col-span-6',
+      height: 'h-80',
+      category: ['Lomba', 'Project'],
+    },
+    {
+      id: 7,
+      image: lksSuasanaImg,
+      tag: 'Arena Kompetisi LKS',
+      tagBg: 'bg-indigo-600 text-white',
+      title: 'Suasana Pelaksanaan Kompetisi LKS Jakarta Utara',
+      desc: 'Dokumentasi perjuangan peserta saat menyelesaikan tantangan coding dan live test di hadapan dewan juri.',
+      colSpan: 'md:col-span-12',
+      height: 'h-96',
+      category: ['Lomba'],
     },
   ];
 
@@ -159,8 +213,8 @@ export default function Gallery() {
             >
               <X className="w-5 h-5" />
             </button>
-            <div className="h-72 sm:h-96 relative">
-              <img src={activeModal.image} alt={activeModal.title} className="w-full h-full object-cover" />
+            <div className="max-h-[65vh] min-h-[260px] bg-slate-950 flex items-center justify-center relative overflow-hidden">
+              <img src={activeModal.image} alt={activeModal.title} className="w-full h-full max-h-[65vh] object-contain" />
             </div>
             <div className="p-6 space-y-2">
               <span className="text-xs font-bold text-tech-blue uppercase tracking-wider block">
